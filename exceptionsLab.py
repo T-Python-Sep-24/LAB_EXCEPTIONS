@@ -10,6 +10,7 @@ def additoin(x, y):
     except NameError:
         print("your have incorrect variable name, please edit fix the problem")
     else:
-        print("The operation is successfully")
+        print("The operation is successful")
+
 
 additoin(10, 20)
