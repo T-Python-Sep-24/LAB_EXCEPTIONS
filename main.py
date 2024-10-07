@@ -7,5 +7,5 @@ try:
     additoin(10, 20)
     print("the operation is successful")
 except NameError as e:
-    print("Value is wrong")
+    print("Variable is not defiend")
     print(e)
