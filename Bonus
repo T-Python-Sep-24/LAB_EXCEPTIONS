@@ -1,0 +1,53 @@
+def celsius_to_fahrenheit(celsius):
+    try:
+        fahrenheit = (celsius * 9/5) + 32
+        return fahrenheit
+    except TypeError:
+        raise TypeError("Invalid temperature type!")
+
+def fahrenheit_to_celsius(fahrenheit):
+    try:
+        celsius = (fahrenheit - 32) * 5/9
+        return celsius
+    except TypeError:
+        raise TypeError("Invalid temperature type!")
+
+def main():
+    while True:
+        try:
+            
+            user_input = input("Enter a temperature and its unit (e.g., '25 C' or '77 F'): ")
+            
+            
+            temperature_str, unit = user_input.split()
+
+            
+            temperature = float(temperature_str)
+
+            
+            if unit.upper() == 'C':
+                fahrenheit = celsius_to_fahrenheit(temperature)
+                print(f"Temperature in Fahrenheit: {fahrenheit:.2f} F")
+            elif unit.upper() == 'F':
+                celsius = fahrenheit_to_celsius(temperature)
+                print(f"Temperature in Celsius: {celsius:.2f} C")
+            else:
+                
+                raise TypeError("Invalid unit. Please use 'C' for Celsius or 'F' for Fahrenheit.")
+            
+            stop = input("write 'y' to continuity or 'n' to stop : ")
+            if stop == 'y':
+                continue
+            else:
+                break
+
+        except ValueError:
+            print("Invalid temperature value. Please enter a valid number.")
+        
+        except TypeError as te:
+            print(te)
+        
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+
+main()
