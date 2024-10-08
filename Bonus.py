@@ -22,8 +22,7 @@ def main():
             else:
                 raise TypeError("Invalid unit. Please use 'C' or 'F'.")    
 
-        except ValueError:
-            print("Invalid temperature value. Please try again.")
+        
         except TypeError as t:
             print(t)
 
