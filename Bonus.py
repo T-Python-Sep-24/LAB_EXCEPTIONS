@@ -55,15 +55,12 @@ def main():
         except ValueError as e:
             print(e)
             input("")
-            continue
         except TypeError as e:
             print(e)
             input("")  
-            continue
         except Exception as e:
             print(e)
             input("")
-            continue
 
 #Invoke main function
 main()
