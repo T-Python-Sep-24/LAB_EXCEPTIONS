@@ -7,7 +7,7 @@ def fahrenheit_to_celsius(fahrenheit):
 def main():
     while True:
         try:
-            temperature = input('Please enter a temperature with its unit: ').strip()
+            temperature = input('Please enter a temperature with its unit: ')
        
             parts = temperature.split()
             temp_str, unit = parts
@@ -15,10 +15,10 @@ def main():
             
             if unit.upper() == 'C':
                 converted_temp = celsius_to_fahrenheit(temp)
-                print(f'The converted temperature from Celsius to Fahrenheit is {converted_temp:.2f} F')
+                print(f'The converted temperature from Celsius to Fahrenheit is {round(converted_temp, 2)} F')
             elif unit.upper() == 'F':
                 converted_temp = fahrenheit_to_celsius(temp)
-                print(f'The converted temperature from Fahrenheit to Celsius is {converted_temp:.2f} C')
+                print(f'The converted temperature from Fahrenheit to Celsius is {round(converted_temp, 2)} C')
             else:
                 raise TypeError('Invalid unit! Please enter "C" for Celsius or "F" for Fahrenheit')
                 
@@ -29,5 +29,6 @@ def main():
         except TypeError as e:
             print(e)
 
-if __name__ == "__main__":
-    main()
+print()
+main()
+print()
